@@ -4,5 +4,20 @@ jobs:
   my-job:
     runs-on: ubuntu-latest
     steps:
-      - name: linter-step
-        run: make lint
+      ## Получаем репозиторий
+      - uses: actions/checkout@v2
+      ## Конфигурация Node.js
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      ## Установка проекта
+      - name: npm install
+        run: |
+          make install
+        env:
+          CI: true
+      ## запуск линтера
+      - name: Run linter
+        run: |
+          make lint
