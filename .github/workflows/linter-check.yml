@@ -4,14 +4,14 @@ jobs:
   my-job:
     runs-on: ubuntu-latest
     steps:
-      ## Получаем репозиторий
+      ## Получаем последнюю версию репозитория
       - uses: actions/checkout@v2
-      ## Конфигурация Node.js
+      ## Устанавливаем Node.js
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      ## Установка проекта
+      ## Выполняем команду install описанную в make файле проекта
       - name: npm install
         run: |
           make install
