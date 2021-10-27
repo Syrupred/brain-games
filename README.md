@@ -4,3 +4,5 @@
 [![linter-check](https://github.com/Syrupred/frontend-project-lvl1/actions/workflows/linter-check.yml/badge.svg)](https://github.com/Syrupred/frontend-project-lvl1/actions/workflows/linter-check.yml)
 ### brain-even video
 https://asciinema.org/a/rnM0rIhIrHH1ryXlK4TiXdmYm
+### brain-calc video
+https://asciinema.org/a/DO4WTx40kHwSZeuFSCS7UJCyW
