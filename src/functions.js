@@ -23,3 +23,17 @@ export const getResultOfCalc = (randomNumberFirst, randomNumberSecond, randomOpe
   }
   return randomNumberFirst - randomNumberSecond;
 };
+
+export const getGreatestCommonDivisor = (randomNumberFirst, randomNumberSecond) => {
+  let a = randomNumberFirst;
+  let b = randomNumberSecond;
+  if (a === b) {
+    return a;
+  }
+  if (a < b) {
+    const firstNumber = b;
+    b = a;
+    a = firstNumber;
+  }
+  return getGreatestCommonDivisor(a - b, b);
+};
