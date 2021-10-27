@@ -5,4 +5,6 @@
 ### brain-even video
 https://asciinema.org/a/rnM0rIhIrHH1ryXlK4TiXdmYm
 ### brain-calc video
-https://asciinema.org/a/DO4WTx40kHwSZeuFSCS7UJCyW
+https://asciinema.org/a/4nyiTdXjbMMxd5yu9k8aXvwZz
+### brain-gcd video
+https://asciinema.org/a/DOMhwTlAkmwA80r6jojI0CpsP
