@@ -47,3 +47,12 @@ export const getProgression = (firstNumberOfProgression, differenceOfProgression
   }
   return resultProgression;
 };
+
+export const isPrime = (randomNumber) => {
+  for (let divisor = 2; divisor < randomNumber; divisor += 1) {
+    if (randomNumber % divisor === 0) {
+      return 'no';
+    }
+  }
+  return 'yes';
+};
