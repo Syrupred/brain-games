@@ -37,3 +37,13 @@ export const getGreatestCommonDivisor = (randomNumberFirst, randomNumberSecond) 
   }
   return getGreatestCommonDivisor(a - b, b);
 };
+
+export const getProgression = (firstNumberOfProgression, differenceOfProgression) => {
+  let numberOfProgression = 0;
+  const resultProgression = [];
+  for (let indexNumber = 1; indexNumber < 11; indexNumber += 1) {
+    numberOfProgression = firstNumberOfProgression + (indexNumber - 1) * differenceOfProgression;
+    resultProgression.push(numberOfProgression);
+  }
+  return resultProgression;
+};
