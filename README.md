@@ -8,3 +8,5 @@ https://asciinema.org/a/rnM0rIhIrHH1ryXlK4TiXdmYm
 https://asciinema.org/a/4nyiTdXjbMMxd5yu9k8aXvwZz
 ### brain-gcd video
 https://asciinema.org/a/DOMhwTlAkmwA80r6jojI0CpsP
+### brain-progression video
+https://asciinema.org/a/YdnzV8AOUeEmDkIS1Nbm2lVCw
