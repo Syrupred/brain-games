@@ -8,7 +8,7 @@ export const greeting = () => {
 };
 
 export default (game) => {
-  const [nameOfUser] = greeting();
+  const nameOfUser = greeting();
   const [roundGenerator, rulesGame] = game();
   console.log(rulesGame);
   for (let numberOfCorrectAnswers = 0; numberOfCorrectAnswers < 3; numberOfCorrectAnswers += 1) {
