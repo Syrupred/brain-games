@@ -1,8 +1,19 @@
-import { getRandomNumber } from '../functions.js';
+const getRandomNumber = (start, end) => {
+  const min = Math.ceil(start);
+  const max = Math.floor(end);
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+};
 
-export default () => {
-  const randomNumber = getRandomNumber(1, 100);
+const rulesGame = "Answer 'yes' if the number is even, otherwise answer 'no'.";
+
+const even = () => {
+  const minRandomValue = 1;
+  const maxRandomValue = 100;
+  const randomNumber = getRandomNumber(minRandomValue, maxRandomValue);
   const question = `${randomNumber}`;
-  const correctAnswer = randomNumber % 2 === 0 ? 'yes' : 'no';
+  const isEven = randomNumber % 2 === 0;
+  const correctAnswer = isEven ? 'yes' : 'no';
   return [question, correctAnswer];
 };
+
+export default () => [even, rulesGame];
