@@ -1,33 +1,25 @@
-const getRandomNumber = (start, end) => {
-  const min = Math.ceil(start);
-  const max = Math.floor(end);
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-};
+import getRandomNumber from '../getRandomNumber.js';
 
-const getGreatestCommonDivisor = (randomNumberFirst, randomNumberSecond) => {
-  let a = randomNumberFirst;
-  let b = randomNumberSecond;
+const getGreatestCommonDivisor = (numberFirst, numberSecond) => {
+  let a = numberFirst;
+  let b = numberSecond;
   if (a === b) {
     return a;
   }
   if (a < b) {
-    const firstNumber = b;
-    b = a;
-    a = firstNumber;
+    [a, b] = [b, a];
   }
   return getGreatestCommonDivisor(a - b, b);
 };
 
 const rulesGame = 'Find the greatest common divisor of given numbers.';
 
-const gcd = () => {
-  const minRandomValue = 1;
-  const maxRandomValue = 100;
-  const randomNumberFirst = getRandomNumber(minRandomValue, maxRandomValue);
-  const randomNumberSecond = getRandomNumber(minRandomValue, maxRandomValue);
-  const question = `${randomNumberFirst} ${randomNumberSecond}`;
-  const correctAnswer = getGreatestCommonDivisor(randomNumberFirst, randomNumberSecond);
+const gameRound = () => {
+  const numberFirst = getRandomNumber(1, 100);
+  const numberSecond = getRandomNumber(1, 100);
+  const question = `${numberFirst} ${numberSecond}`;
+  const correctAnswer = getGreatestCommonDivisor(numberFirst, numberSecond);
   return [question, String(correctAnswer)];
 };
 
-export default () => [gcd, rulesGame];
+export default () => [gameRound, rulesGame];
