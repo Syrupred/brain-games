@@ -1,34 +1,27 @@
-const getRandomNumber = (start, end) => {
-  const min = Math.ceil(start);
-  const max = Math.floor(end);
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-};
+import getRandomNumber from '../getRandomNumber.js';
 
-const getProgression = (firstNumberOfProgression, differenceOfProgression) => {
-  let numberOfProgression = 0;
-  const resultProgression = [];
-  for (let indexNumber = 1; indexNumber < 11; indexNumber += 1) {
-    numberOfProgression = firstNumberOfProgression + (indexNumber - 1) * differenceOfProgression;
-    resultProgression.push(numberOfProgression);
+const getProgression = (start, step) => {
+  let val = 0;
+  const arrProgression = [];
+  const progressionLength = getRandomNumber(6, 11);
+  for (let i = 1; i < progressionLength; i += 1) {
+    val = start + (i - 1) * step;
+    arrProgression.push(val);
   }
-  return resultProgression;
+  return arrProgression;
 };
 
 const rulesGame = 'What number is missing in the progression?';
 
-const progression = () => {
-  const minRandomValue = 1;
-  const maxRandomValue = 10;
-  const minHiddenIndex = 0;
-  const maxHiddenIndex = 9;
-  const firstNumberOfProgression = getRandomNumber(minRandomValue, maxRandomValue);
-  const differenceOfProgression = getRandomNumber(minRandomValue, maxRandomValue);
-  const hiddenIndex = getRandomNumber(minHiddenIndex, maxHiddenIndex);
-  const progressWithoutHidden = getProgression(firstNumberOfProgression, differenceOfProgression);
-  const correctAnswer = progressWithoutHidden[hiddenIndex];
-  progressWithoutHidden[hiddenIndex] = '..';
-  const question = `${progressWithoutHidden.join(' ')}`;
+const gameRound = () => {
+  const start = getRandomNumber(1, 10);
+  const step = getRandomNumber(1, 10);
+  const progression = getProgression(start, step);
+  const hiddenIndex = getRandomNumber(0, progression.length - 1);
+  const correctAnswer = progression[hiddenIndex];
+  progression[hiddenIndex] = '..';
+  const question = `${progression.join(' ')}`;
   return [question, String(correctAnswer)];
 };
 
-export default () => [progression, rulesGame];
+export default () => [gameRound, rulesGame];
