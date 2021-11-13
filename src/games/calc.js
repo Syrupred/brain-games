@@ -28,8 +28,8 @@ const gameRound = () => {
   const numberSecond = getRandomNumber(1, 100);
   const operator = getRandomOperator();
   const question = `${numberFirst} ${operator} ${numberSecond}`;
-  const correctResult = getResultOfCalc(numberFirst, numberSecond, operator);
-  return [question, String(correctResult)];
+  const correctAnswer = getResultOfCalc(numberFirst, numberSecond, operator);
+  return [question, String(correctAnswer)];
 };
 
 export default () => [gameRound, rulesGame];
